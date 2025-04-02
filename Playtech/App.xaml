@@ -1,0 +1,12 @@
+﻿<Application x:Class="Playtech.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Playtech"
+             xmlns:lib="clr-namespace:Playtech.Lib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <lib:MultiplierOpacityConverter x:Key="MultiplierOpacityConverter" />
+        <lib:HeightFractionConverter x:Key="HeightFractionConverter" />
+    </Application.Resources>
+</Application>
