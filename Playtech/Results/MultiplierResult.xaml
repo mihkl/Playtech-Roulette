@@ -1,25 +1,30 @@
-﻿<UserControl x:Class="Playtech.Results.MultiplierResult"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Playtech.Results" d:DataContext="{d:DesignInstance Type=local:ResultsViewModel}"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Border CornerRadius="6"
+﻿<UserControl
+    x:Class="Playtech.Results.MultiplierResult"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Playtech.Results"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance Type=local:ResultsViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Border
+        MinWidth="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
+        MinHeight="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualHeight, Converter={StaticResource HeightFractionConverter}}"
+        HorizontalAlignment="Center"
         Background="#272727"
         BorderBrush="{Binding BorderBrush}"
         BorderThickness="4"
-        HorizontalAlignment="Center"
-        MinHeight="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualHeight, Converter={StaticResource HeightFractionConverter}}"
-        MinWidth="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
+        CornerRadius="6"
         Opacity="{Binding Multiplier, Converter={StaticResource MultiplierOpacityConverter}}">
         <Viewbox>
-            <TextBlock Text="{Binding Multiplier, StringFormat=x{0}}"
-               Foreground="{Binding BorderBrush}"
-               FontWeight="SemiBold"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontWeight="SemiBold"
+                Foreground="{Binding BorderBrush}"
+                Text="{Binding Multiplier, StringFormat=x{0}}" />
         </Viewbox>
     </Border>
 </UserControl>
