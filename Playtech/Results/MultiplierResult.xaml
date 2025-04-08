@@ -10,21 +10,18 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Border
-        MinWidth="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualWidth}"
-        MinHeight="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=ActualHeight, Converter={StaticResource HeightFractionConverter}}"
+        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}, Converter={StaticResource HeightFractionConverter}}"
         HorizontalAlignment="Center"
         Background="#272727"
         BorderBrush="{Binding BorderBrush}"
-        BorderThickness="4"
-        CornerRadius="6"
+        BorderThickness="1"
+        CornerRadius="2"
         Opacity="{Binding Multiplier, Converter={StaticResource MultiplierOpacityConverter}}">
-        <Viewbox>
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontWeight="SemiBold"
-                Foreground="{Binding BorderBrush}"
-                Text="{Binding Multiplier, StringFormat=x{0}}" />
-        </Viewbox>
+        <TextBlock
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontWeight="SemiBold"
+            Foreground="{Binding BorderBrush}"
+            Text="{Binding Multiplier, StringFormat=x{0}}" />
     </Border>
 </UserControl>

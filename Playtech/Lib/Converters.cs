@@ -24,7 +24,7 @@ public class HeightFractionConverter: IValueConverter
     {
         if (value is double height)
         {
-            return height * 0.4;
+            return height * 1.7;
         }
         return 0;
     }
